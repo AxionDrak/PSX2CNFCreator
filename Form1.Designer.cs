@@ -33,7 +33,9 @@
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDummyFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPayPal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -63,8 +65,6 @@
             this.rbPSTwo = new System.Windows.Forms.RadioButton();
             this.rbPSOne = new System.Windows.Forms.RadioButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.tsmiDummyFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPayPal = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -110,6 +110,14 @@
             this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
             // 
+            // tsmiDummyFile
+            // 
+            this.tsmiDummyFile.Image = global::PSX2_CNF_Creator.Properties.Resources.trash;
+            this.tsmiDummyFile.Name = "tsmiDummyFile";
+            this.tsmiDummyFile.Size = new System.Drawing.Size(180, 22);
+            this.tsmiDummyFile.Text = "Criar DummyFile";
+            this.tsmiDummyFile.Click += new System.EventHandler(this.TsmiDummyFile_Click);
+            // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -119,6 +127,14 @@
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
+            // 
+            // tsmiPayPal
+            // 
+            this.tsmiPayPal.Image = global::PSX2_CNF_Creator.Properties.Resources.paypal;
+            this.tsmiPayPal.Name = "tsmiPayPal";
+            this.tsmiPayPal.Size = new System.Drawing.Size(216, 22);
+            this.tsmiPayPal.Text = "Doações (PayPal)";
+            this.tsmiPayPal.Click += new System.EventHandler(this.TsmiPayPal_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -442,20 +458,6 @@
             this.saveFileDialog1.Filter = "Arquivo CNF (*.CNF)|*.cnf";
             this.saveFileDialog1.RestoreDirectory = true;
             this.saveFileDialog1.Title = "Salvar CNF";
-            // 
-            // tsmiDummyFile
-            // 
-            this.tsmiDummyFile.Name = "tsmiDummyFile";
-            this.tsmiDummyFile.Size = new System.Drawing.Size(180, 22);
-            this.tsmiDummyFile.Text = "Criar DummyFile";
-            this.tsmiDummyFile.Click += new System.EventHandler(this.TsmiDummyFile_Click);
-            // 
-            // tsmiPayPal
-            // 
-            this.tsmiPayPal.Name = "tsmiPayPal";
-            this.tsmiPayPal.Size = new System.Drawing.Size(216, 22);
-            this.tsmiPayPal.Text = "Doações (PayPal)";
-            this.tsmiPayPal.Click += new System.EventHandler(this.TsmiPayPal_Click);
             // 
             // Form1
             // 
