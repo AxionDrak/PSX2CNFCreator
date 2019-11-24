@@ -9,11 +9,7 @@ I'm just a self-taught software developer and decided to start learning C #. :)
 So please don't mind the badly designed spaghetti code. :P
 
 ### Features:
-* Works on PSOne and PSTwo
-* Create SYSTEM.CNF Files (for PSOne and PSTwo)
-* Create dummy (garbage) file
-
-Ability to create PSOne and PSTwo compatible SYSTEM.CNF file:
+* Supports create SYSTEM.CNF files (for PSOne and PSTwo)
 * Supports any ELF file (PSOne and PSTwo)
 * Supports file and program versioning (PSTwo)
 * Supports PAL and NTSC (PSTwo) video modes
@@ -25,6 +21,9 @@ Ability to create PSOne and PSTwo compatible SYSTEM.CNF file:
 * Automatically corrects the file format SYSTEM.CNF
 * CLEAR option added as facilitator
 * Compatible (tested) with the following operating systems: Windows 8 / 8.1 / 10
+
+### Language:
+* At the moment, only Brazilian Portuguese is supported (sorry :/)
 
 ### SYSTEM.CNF
 The structure of the SYSTEM.CNF file is different for PSOne and PSTwo consoles.
