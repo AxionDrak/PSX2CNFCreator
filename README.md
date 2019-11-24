@@ -1,4 +1,4 @@
-### PSX2CNFCreator
+# PSX2CNFCreator
 **PSX/2 CNF Creator** is a small tool for creating SYSTEM.CNF files compatible with PSOne (PS1) and PSTwo (PS2) consoles, being mainly used for disk homebrews.
 
 ### Attention !!!
@@ -21,7 +21,72 @@ Ability to create PSOne and PSTwo compatible SYSTEM.CNF file:
 * Supports TCB (PSOne)
 * Supports EVENT (PSOne)
 * Supports STACK (PSOne)
-* Ability to create Dummy (gargabe) files
+* Supports Dummy file creation (gargabe)
 * Automatically corrects the file format SYSTEM.CNF
-* CLEAR option adds as facilitator
-* Compatible with the following operating systems: Windows 8 / 8.1 / 10
+* CLEAR option added as facilitator
+* Compatible (tested) with the following operating systems: Windows 8 / 8.1 / 10
+
+### SYSTEM.CNF
+The structure of the SYSTEM.CNF file is different for PSOne and PSTwo consoles.
+
+Below are two examples of this file:
+
+- SYSTEM.CNF (PSOne)
+```
+BOOT = cdrom:\MY_ELF.ELF;1
+TCB = 4
+EVENT = 16
+STACK = 801FFFFC
+```
+
+- SYSTEM.CNF (PSTwo)
+```
+BOOT2 = cdrom0:\MY_ELF.ELF;1
+VER = 1.0
+VMODE = NTSC
+HDDUNITPOWER = NICHDD (Optional)
+```
+
+### Report Bugs
+Verify that the bug is reproducible and still occurs in the latest version of SVN / Daily build.
+
+Also check the list of known issues (below) to ensure the issue is not yet known:
+
+Include the following information:
+* PSX / 2 CNF Creator version (try the latest version of SVN / Daily build)
+* Bug details, including playback instructions
+* Operating System (Windows 8 / 8.1 / 10)
+* Attach an image if possible
+ 
+### Known Issues
+* No problem reported :)
+
+### Changelog
+v1.3
+November 18, 2019
+* Added support for creating Dummy (gargabe) files to fill CD/DVD discs.
+
+v1.2
+November 17, 2019
+* Added support for choosing directory to save SYSTEM.CNF file
+* Added program information screen
+* Added donation option via PayPal ;)
+
+v1.1
+November 16, 2019
+* Added full support of SYSTEM.CNF for PSOne
+* Stability corrections
+
+v1.0 - Release To Manufacturing (RTM)
+November 15, 2019
+* Added HDDUNITPOWER (PSTwo) support
+* Added reset option (CLEAR) all settings
+
+v0.50 - RC Version (Release Candidate)
+November 14, 2019
+* Added full support of SYSTEM.CNF for PSTwo
+* Stability corrections
+
+v0.10 - Beta Version
+November 10, 2019
+* Initial release BETA
