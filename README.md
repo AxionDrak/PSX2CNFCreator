@@ -1,4 +1,4 @@
-# PSX2CNFCreator
+# PSX/2 CNF Creator
 
 [![Build Status](https://travis-ci.org/AxionDrak/PSX2CNFCreator.svg?branch=master)](https://travis-ci.org/AxionDrak/PSX2CNFCreator)
 
