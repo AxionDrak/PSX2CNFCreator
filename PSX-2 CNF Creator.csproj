@@ -106,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Archigraphs-Griots-PS-2.ico" />
+    <Content Include="README.TXT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
