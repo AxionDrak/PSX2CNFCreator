@@ -386,4 +386,7 @@ MigrationBackup/
 *.out
 *.app
 
+# Travis CI
+*.yml
+
 # End of https://www.gitignore.io/api/csharp
