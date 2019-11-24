@@ -103,12 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Archigraphs-Griots-PS-2.ico" />
-    <None Include="Resources\paypal1.png" />
-    <None Include="Resources\trash1.png" />
-    <None Include="Resources\trash.png" />
-    <None Include="Resources\paypal-2.png" />
-    <None Include="Resources\paypal.png" />
     <None Include="bin\Release\psx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

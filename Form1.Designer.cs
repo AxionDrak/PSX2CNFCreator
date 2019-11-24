@@ -445,7 +445,6 @@
             // 
             // tsmiDummyFile
             // 
-            this.tsmiDummyFile.Image = global::PSX2_CNF_Creator.Properties.Resources.trash1;
             this.tsmiDummyFile.Name = "tsmiDummyFile";
             this.tsmiDummyFile.Size = new System.Drawing.Size(180, 22);
             this.tsmiDummyFile.Text = "Criar DummyFile";
@@ -453,7 +452,6 @@
             // 
             // tsmiPayPal
             // 
-            this.tsmiPayPal.Image = global::PSX2_CNF_Creator.Properties.Resources.paypal1;
             this.tsmiPayPal.Name = "tsmiPayPal";
             this.tsmiPayPal.Size = new System.Drawing.Size(216, 22);
             this.tsmiPayPal.Text = "Doações (PayPal)";
