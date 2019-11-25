@@ -55,14 +55,14 @@ HDDUNITPOWER = NICHDD (Optional)
 
 ### Report Bugs
 ---------------
-Verify that the bug is reproducible and still occurs in the latest version of SVN / Daily build.
+Verify that the bug is reproducible and still occurs in the latest version of SVN/Daily build.
 
 Also check the list of known issues (below) to ensure the issue is not yet known:
 
 Include the following information:
-* PSX / 2 CNF Creator version (try the latest version of SVN / Daily build)
+* PSX/2 CNF Creator version (try the latest version of SVN/Daily build)
 * Bug details, including playback instructions
-* Operating System (Windows 8 / 8.1 / 10)
+* Operating System (Windows 8/8.1/10)
 * Attach an image if possible
  
 ### Known Issues
@@ -102,7 +102,7 @@ November 10, 2019
 
 ### Compile
 -----------
-See COMPILE.TXT file for how to compile and install Capstone.
+See COMPILE.TXT file for how to compile and install PSX/2 CNF Creator.
 
 ### Documentation
 -----------------
