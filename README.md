@@ -8,8 +8,6 @@
 
 ### Attention!!!
 ----------------
-This software is experimental!
-
 I'm just a self-taught software developer and decided to start learning C #. :)
 
 So please don't mind the badly designed spaghetti code. :P
