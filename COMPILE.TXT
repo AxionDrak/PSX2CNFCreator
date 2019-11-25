@@ -1,0 +1,18 @@
+This documentation explains how to compile PSX/2 CNF Creator on Windows using
+Microsoft Visual Studio version 2019.
+
+                        *-*-*-*-*-*
+
+PSX/2 CNF Creator requires no prerequisite packages with default configurations, so it is
+easy to compile & install. Open the Visual Studio solution "PSX2CNFCreator.sln"
+and follow the instructions below.
+
+NOTE: This requires Visual Studio 2019.
+
+
+(1) Compile from source on Windows with Visual Studio
+
+  - Choose the configuration and the platform you want: Release/Debug & Any CPU.
+
+(2) You can make sure the prior steps successfully worked by launching one of the
+  binary (PSX2CNFCreator.exe).
