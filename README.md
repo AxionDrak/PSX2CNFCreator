@@ -6,14 +6,16 @@
 
 **PSX/2 CNF Creator** is a small tool for creating SYSTEM.CNF files compatible with PSOne (PS1) and PSTwo (PS2) consoles, being mainly used for disk homebrews.
 
-### Attention !!!
+### Attention!!!
+----------------
 This software is experimental!
 
 I'm just a self-taught software developer and decided to start learning C #. :)
 
 So please don't mind the badly designed spaghetti code. :P
 
-### Features:
+### Features
+------------
 * Supports create SYSTEM.CNF files (for PSOne and PSTwo)
 * Supports any ELF file (PSOne and PSTwo)
 * Supports file and program versioning (PSTwo)
@@ -27,10 +29,12 @@ So please don't mind the badly designed spaghetti code. :P
 * CLEAR option added as facilitator
 * Compatible (tested) with the following operating systems: Windows 8 / 8.1 / 10
 
-### Language:
+### Language
+------------
 * At the moment, only Brazilian Portuguese is supported (sorry :/)
 
 ### SYSTEM.CNF
+--------------
 The structure of the SYSTEM.CNF file is different for PSOne and PSTwo consoles.
 
 Below are two examples of this file:
@@ -52,6 +56,7 @@ HDDUNITPOWER = NICHDD (Optional)
 ```
 
 ### Report Bugs
+---------------
 Verify that the bug is reproducible and still occurs in the latest version of SVN / Daily build.
 
 Also check the list of known issues (below) to ensure the issue is not yet known:
@@ -63,9 +68,11 @@ Include the following information:
 * Attach an image if possible
  
 ### Known Issues
+----------------
 * No problem reported :)
 
 ### Changelog
+-------------
 v1.3
 November 18, 2019
 * Added support for creating Dummy (gargabe) files to fill CD/DVD discs.
@@ -94,3 +101,17 @@ November 14, 2019
 v0.10 - Beta Version
 November 10, 2019
 * Initial release BETA
+
+### Compile
+-----------
+See COMPILE.TXT file for how to compile and install Capstone.
+
+### Documentation
+-----------------
+See README for PSX/2 CNF Creator information.
+
+### License
+-----------
+
+This project is released under the GNU license. If you redistribute the binary
+or source code of PSX/2 CNF Creator, please attach file LICENSE.TXT with your products.
