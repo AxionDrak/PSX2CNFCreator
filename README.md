@@ -109,6 +109,5 @@ See README for PSX/2 CNF Creator information.
 
 ### License
 -----------
-
 This project is released under the GNU license. If you redistribute the binary
 or source code of PSX/2 CNF Creator, please attach file LICENSE.TXT with your products.
