@@ -385,5 +385,11 @@ namespace PSTwo_CNF
             frmDummyFile _frmDummy = new frmDummyFile();
             _frmDummy.ShowDialog();
         }
+
+        private void TsmiHelp_Click(object sender, EventArgs e)
+        {
+            string _curDir = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString());
+            Help.ShowHelp(this, "file://" + _curDir + "\\psxhelp.chm");
+        }
     }
 }
