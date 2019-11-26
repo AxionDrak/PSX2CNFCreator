@@ -126,6 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Archigraphs-Griots-PS-2.ico" />
+    <None Include="psxhelp.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\question.png" />
     <None Include="README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
