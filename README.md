@@ -15,7 +15,7 @@ I'm just a self-taught software developer and decided to start learning C #. :)
 
 So please don't mind the badly designed spaghetti code. :P
 
-### Release types
+### Hash
 -----------------
 Use the table below to ensure that downloaded files are unchanged. These values are for files in their compiled (final) version.
 
