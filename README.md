@@ -1,8 +1,11 @@
 # PSX/2 CNF Creator
 
 [![Build Status](https://travis-ci.org/AxionDrak/PSX2CNFCreator.svg?branch=master)](https://travis-ci.org/AxionDrak/PSX2CNFCreator)
+[![Build status](https://ci.appveyor.com/api/projects/status/7wdrpq87gxbb85nb/branch/master?svg=true)](https://ci.appveyor.com/project/laetemn/psx2cnfcreator/branch/master)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/a4wvbn89wu3pinas/branch/master?svg=true)](https://ci.appveyor.com/project/laetemn/psx2cnfcreator/branch/master)
+Copyright 2019, Laete Meireles (a.k.a Axion Drak)   
+Licenced under GNU Free License version 3.0  
+Review LICENSE file for further details.   
 
 **PSX/2 CNF Creator** is a small tool for creating SYSTEM.CNF files compatible with PSOne (PS1) and PSTwo (PS2) consoles, being mainly used for disk homebrews.
 
@@ -110,6 +113,5 @@ See README for PSX/2 CNF Creator information.
 
 ### License
 -----------
-
 This project is released under the GNU license. If you redistribute the binary
 or source code of PSX/2 CNF Creator, please attach file LICENSE.TXT with your products.
