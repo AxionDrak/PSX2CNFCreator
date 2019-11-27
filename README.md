@@ -15,7 +15,7 @@ Review LICENSE file for further details.
 
 ### Attention!!!
 ----------------
-I'm just a self-taught software developer and decided to start learning C #. :)
+I'm just a self-taught software developer and decided to start learning C#. :)
 
 So please don't mind the badly designed spaghetti code. :P
 
@@ -42,7 +42,7 @@ Use the table below to ensure that downloaded files are unchanged. These values 
 * Supports Dummy file creation (gargabe)
 * Automatically corrects the file format SYSTEM.CNF
 * CLEAR option added as facilitator
-* Compatible (tested) with the following operating systems: Windows 8 / 8.1 / 10
+* Compatible (tested) with the following operating systems: Windows 8/8.1/10
 
 ### Language
 ------------
@@ -128,4 +128,4 @@ See README for PSX/2 CNF Creator information.
 ### License
 -----------
 This project is released under the GNU license. If you redistribute the binary
-or source code of PSX/2 CNF Creator, please attach file LICENSE.TXT with your products.
+or source code of PSX/2 CNF Creator, please attach file LICENSE with your products.
