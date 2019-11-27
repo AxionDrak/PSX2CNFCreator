@@ -2,6 +2,8 @@
 
 [![GNU License](http://img.shields.io/:license-gnu-blue.svg)](https://github.com/AxionDrak/PSX2CNFCreator/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator/releases/latest)
+[![CODE size](https://img.shields.io/github/languages/code-size/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator)
+[![REPO size](https://img.shields.io/github/repo-size/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator/releases)
 [![Build Status](https://travis-ci.org/AxionDrak/PSX2CNFCreator.svg?branch=master)](https://travis-ci.org/AxionDrak/PSX2CNFCreator)
 [![Build status](https://ci.appveyor.com/api/projects/status/7wdrpq87gxbb85nb/branch/master?svg=true)](https://ci.appveyor.com/project/laetemn/psx2cnfcreator/branch/master)
 
