@@ -9,6 +9,7 @@
 [![LAST commit](https://img.shields.io/github/last-commit/AxionDrak/PSX2CNFCreator/master)](https://github.com/AxionDrak/PSX2CNFCreator)
 [![Build Status](https://travis-ci.org/AxionDrak/PSX2CNFCreator.svg?branch=master)](https://travis-ci.org/AxionDrak/PSX2CNFCreator)
 [![Build status](https://ci.appveyor.com/api/projects/status/7wdrpq87gxbb85nb/branch/master?svg=true)](https://ci.appveyor.com/project/laetemn/psx2cnfcreator/branch/master)
+[![GitHub contributors](https://img.shields.io/github/contributors/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator)
 
 Copyright 2019, Laete Meireles (a.k.a Axion Drak)   
 Licenced under GNU Free License version 3.0  
