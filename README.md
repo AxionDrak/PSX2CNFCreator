@@ -2,8 +2,14 @@
 
 [![GNU License](http://img.shields.io/:license-gnu-blue.svg)](https://github.com/AxionDrak/PSX2CNFCreator/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator/releases/latest)
+[![Downloads release](https://img.shields.io/github/downloads/AxionDrak/PSX2CNFCreator/total)](https://github.com/AxionDrak/PSX2CNFCreator/releases/latest)
+[![TOP language](https://img.shields.io/github/languages/top/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator)
+[![CODE size](https://img.shields.io/github/languages/code-size/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator)
+[![REPO size](https://img.shields.io/github/repo-size/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator/releases)
+[![LAST commit](https://img.shields.io/github/last-commit/AxionDrak/PSX2CNFCreator/master)](https://github.com/AxionDrak/PSX2CNFCreator)
 [![Build Status](https://travis-ci.org/AxionDrak/PSX2CNFCreator.svg?branch=master)](https://travis-ci.org/AxionDrak/PSX2CNFCreator)
 [![Build status](https://ci.appveyor.com/api/projects/status/7wdrpq87gxbb85nb/branch/master?svg=true)](https://ci.appveyor.com/project/laetemn/psx2cnfcreator/branch/master)
+[![GitHub contributors](https://img.shields.io/github/contributors/AxionDrak/PSX2CNFCreator)](https://github.com/AxionDrak/PSX2CNFCreator)
 
 Copyright 2019, Laete Meireles (a.k.a Axion Drak)   
 Licenced under GNU Free License version 3.0  
@@ -13,7 +19,7 @@ Review LICENSE file for further details.
 
 ### Attention!!!
 ----------------
-I'm just a self-taught software developer and decided to start learning C #. :)
+I'm just a self-taught software developer and decided to start learning C#. :)
 
 So please don't mind the badly designed spaghetti code. :P
 
@@ -40,7 +46,7 @@ Use the table below to ensure that downloaded files are unchanged. These values 
 * Supports Dummy file creation (gargabe)
 * Automatically corrects the file format SYSTEM.CNF
 * CLEAR option added as facilitator
-* Compatible (tested) with the following operating systems: Windows 8 / 8.1 / 10
+* Compatible (tested) with the following operating systems: Windows 8/8.1/10
 
 ### Language
 ------------
@@ -126,4 +132,4 @@ See README for PSX/2 CNF Creator information.
 ### License
 -----------
 This project is released under the GNU license. If you redistribute the binary
-or source code of PSX/2 CNF Creator, please attach file LICENSE.TXT with your products.
+or source code of PSX/2 CNF Creator, please attach file LICENSE with your products.
