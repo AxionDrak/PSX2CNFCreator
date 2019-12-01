@@ -25,8 +25,6 @@ namespace PSX2_CNF_Creator
             cbSizeMegaByte.SelectedIndex = 0;
             cbSizeGigaByte.SelectedIndex = 0;
             cbType.SelectedIndex = 0;
-
-            labelDummyFile.Text = "Escolha o tamanho do arquivo Dummy à \r\nser criado.";
         }
 
         private void BtnDummy_Click(object sender, EventArgs e)
