@@ -35,6 +35,7 @@
             this.cbSizeMegaByte = new System.Windows.Forms.ComboBox();
             this.labelDummyFile = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +77,7 @@
             // 
             // btnDummy
             // 
-            this.btnDummy.Location = new System.Drawing.Point(148, 70);
+            this.btnDummy.Location = new System.Drawing.Point(147, 70);
             this.btnDummy.Name = "btnDummy";
             this.btnDummy.Size = new System.Drawing.Size(75, 24);
             this.btnDummy.TabIndex = 3;
@@ -104,9 +105,9 @@
             this.labelDummyFile.AutoSize = true;
             this.labelDummyFile.Location = new System.Drawing.Point(12, 9);
             this.labelDummyFile.Name = "labelDummyFile";
-            this.labelDummyFile.Size = new System.Drawing.Size(16, 13);
+            this.labelDummyFile.Size = new System.Drawing.Size(215, 13);
             this.labelDummyFile.TabIndex = 5;
-            this.labelDummyFile.Text = "...";
+            this.labelDummyFile.Text = "Escolha um tamanho para o arquivo Dummy";
             // 
             // label3
             // 
@@ -117,11 +118,21 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Tipo:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "que será criado.";
+            // 
             // frmDummyFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(235, 106);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelDummyFile);
             this.Controls.Add(this.cbSizeMegaByte);
@@ -151,5 +162,6 @@
         private System.Windows.Forms.ComboBox cbSizeMegaByte;
         private System.Windows.Forms.Label labelDummyFile;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
