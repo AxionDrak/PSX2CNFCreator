@@ -133,7 +133,7 @@ November 10, 2019
 
 ### Compile
 -----------
-See COMPILE.TXT file for how to compile and install PSX/2 CNF Creator.
+See _COMPILE_ file for how to compile and install PSX/2 CNF Creator.
 
 ### Documentation
 -----------------
