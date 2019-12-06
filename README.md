@@ -34,9 +34,9 @@ Version: 1.3.1
 |:-------------------------|:---------------------------------|:---------------------------------------------------------------|
 | LICENSE                  | e62637ea8a114355b985fd86c9ffbd6e | 230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809
 | PSX2CNFCreator.exe       | dd0c35d018b24e87ec0f718252642e95 | ad125417a59c54f0e37b16e5a154cdf992b975ab9246d904f942fdd9844f49e9 
-| README.md                | ce24dfe3b7bf8057205a0c2f2260de49 | f88f8ca858d3a7f04a79ef6fe945dd6573d72dcb3ddb53ad323b72cdcfad3a98 
-| psxhelp.chm              | f8a91ea5e16e2f56716e92bd356631aa | 49060f2ae2a1cbf6553dbff77f076d02c3beb0c3596c215a6f1d064e1e467f5d 
-| PSX2CNFCreator_1.3.1.zip | 7fa08c0fe33f957395029dcc17420344 | a42a542732a8bfae46b3475d2e0d9e2b5f5bd24efcf1f17cdbeb83a5833f5281 
+| README.md                | 845a543111e6fbef46a58bf4b077e5ad | d8edd37c2b09a8fb0d35e895aa5b334fbdb792dedea47c6ec7f1d3f72932127d 
+| psxhelp.chm              | a2bff35e32c93ddcf35d5bd8b910b297 | 32395274a35ba473940cee39864ee1d202e724f1a5df313796f19e8899642d5d 
+| PSX2CNFCreator_1.3.1.zip | 5231ef77bffce2a693de508f5cab4b54 | 3b1a4243d3bc1c73bef78d4d9e76ab0903269b8be1bf4493dbe647ff80f12b8c 
 
 ### Features
 ------------
