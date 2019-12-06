@@ -30,11 +30,12 @@ Use the table below to ensure that downloaded files have not changed. These valu
 
 Version: 1.3.1
 
-| Filename                    | MD5                                     | SHA256                                   |
-| --------------------------- | ----------------------------------------|----------------------------------------- |
-| LICENSE                     | e62637ea8a114355b985fd86c9ffbd6e        | 230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809   |
-| PSX2CNFCreator.exe          | dd0c35d018b24e87ec0f718252642e95        | ad125417a59c54f0e37b16e5a154cdf992b975ab9246d904f942fdd9844f49e9   |
-| README.md                   | ce24dfe3b7bf8057205a0c2f2260de49        | f88f8ca858d3a7f04a79ef6fe945dd6573d72dcb3ddb53ad323b72cdcfad3a98   |
+| Filename           | MD5                              | SHA256                                                           |
+|:-------------------|:---------------------------------|:---------------------------------------------------------------- |
+| LICENSE            | e62637ea8a114355b985fd86c9ffbd6e | 230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809 |
+| PSX2CNFCreator.exe | dd0c35d018b24e87ec0f718252642e95 | ad125417a59c54f0e37b16e5a154cdf992b975ab9246d904f942fdd9844f49e9 |
+| README.md          | ce24dfe3b7bf8057205a0c2f2260de49 | f88f8ca858d3a7f04a79ef6fe945dd6573d72dcb3ddb53ad323b72cdcfad3a98 |
+| psxhelp.chm        | f8a91ea5e16e2f56716e92bd356631aa | 49060f2ae2a1cbf6553dbff77f076d02c3beb0c3596c215a6f1d064e1e467f5d |
 
 ### Features
 ------------
