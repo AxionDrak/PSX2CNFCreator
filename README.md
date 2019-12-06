@@ -89,7 +89,7 @@ Include the following information:
  
 ### Known Issues
 ----------------
-* No problem reported :)
+* No problem reported. :)
 
 ### Changelog
 -------------
@@ -101,6 +101,7 @@ December 06, 2019
 * Removed instruction screen previously located in graphical interface.
 * Added "Display Help" option in the Help menu.
   - You can now read the program manual through this menu.
+* Rewrite source code for improvement and cleanup.
 
 v1.3
 November 18, 2019
