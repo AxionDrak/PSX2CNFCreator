@@ -152,7 +152,7 @@ namespace PSTwo_CNF
             FileInfo arquivo = new FileInfo(_file);
             arquivo.Delete();
             //StreamWriter streamW = new StreamWriter(_file, true);
-
+            
             //Create new SafeFileDialog instance
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "Salvar CNF";
@@ -168,7 +168,7 @@ namespace PSTwo_CNF
             {
                 //Save file to file name specified to SafeFileDialog
                 StreamWriter streamW = new StreamWriter(saveFileDialog1.FileName);
-
+                
                 //Chama nosso método que cria o arquivo caso ele não exista.
                 verifyFile();
 
