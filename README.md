@@ -26,7 +26,7 @@ So please don't mind the badly designed spaghetti code. :P
 
 ### Hash
 -----------------
-Use the table below to ensure that downloaded files are unchanged. These values are for files in their compiled (final) version.
+Use the table below to ensure that downloaded files have not changed. These values are for the latest stable version in its compiled (final) version.
 
 | Filename                    | MD5                                     | SHA256                                   |
 | --------------------------- | ----------------------------------------|----------------------------------------- |
@@ -79,7 +79,7 @@ HDDUNITPOWER = NICHDD (Optional)
 ---------------
 Verify that the bug is reproducible and still occurs in the latest version of SVN/Daily build.
 
-Also check the list of known issues (below) to ensure the issue is not yet known:
+Also check the list of known issues (below) to ensure the issue is not yet known.
 
 Include the following information:
 * PSX/2 CNF Creator version (try the latest version of SVN/Daily build)
@@ -93,6 +93,15 @@ Include the following information:
 
 ### Changelog
 -------------
+v1.3.1
+December 06, 2019
+* Fixed SYSTEM.CNF file creation system for PSOne.
+  - You can now choose the directory where the file will be saved.
+* Rearranged the appearance of the graphical interface.
+* Removed instruction screen previously located in graphical interface.
+* Added "Display Help" option in the Help menu.
+  - You can now read the program manual through this menu.
+
 v1.3
 November 18, 2019
 * Added support for creating Dummy (gargabe) files to fill CD/DVD discs.
