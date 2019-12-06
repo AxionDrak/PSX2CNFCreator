@@ -151,7 +151,6 @@ namespace PSTwo_CNF
         {
             FileInfo arquivo = new FileInfo(_file);
             arquivo.Delete();
-            //StreamWriter streamW = new StreamWriter(_file, true);
             
             //Create new SafeFileDialog instance
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
