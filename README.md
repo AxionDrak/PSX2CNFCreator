@@ -34,7 +34,7 @@ Version: 1.3.1
 | --------------------------- | ----------------------------------------|----------------------------------------- |
 | LICENSE                     | e62637ea8a114355b985fd86c9ffbd6e        | 230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809   |
 | PSX2CNFCreator.exe          | dd0c35d018b24e87ec0f718252642e95        | ad125417a59c54f0e37b16e5a154cdf992b975ab9246d904f942fdd9844f49e9   |
-| README.md                   | c5748fe629196f14c45436e92a5fa165        | 527551b8f04a088753e5196d9ec530f00c699b3a73de1f92b4708ec2272b551b   |
+| README.md                   | ce24dfe3b7bf8057205a0c2f2260de49        | f88f8ca858d3a7f04a79ef6fe945dd6573d72dcb3ddb53ad323b72cdcfad3a98   |
 
 ### Features
 ------------
