@@ -409,7 +409,7 @@
             this.MinimumSize = new System.Drawing.Size(316, 333);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PSX/2 CNF Creator 1.3.0";
+            this.Text = "PSX/2 CNF Creator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
