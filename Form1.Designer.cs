@@ -315,7 +315,7 @@
             // 
             // btnSaveCNF
             // 
-            this.btnSaveCNF.Location = new System.Drawing.Point(195, 153);
+            this.btnSaveCNF.Location = new System.Drawing.Point(195, 154);
             this.btnSaveCNF.Name = "btnSaveCNF";
             this.btnSaveCNF.Size = new System.Drawing.Size(75, 23);
             this.btnSaveCNF.TabIndex = 3;
