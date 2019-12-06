@@ -28,11 +28,13 @@ So please don't mind the badly designed spaghetti code. :P
 -----------------
 Use the table below to ensure that downloaded files have not changed. These values are for the latest stable version in its compiled (final) version.
 
+Version: 1.3.1
+
 | Filename                    | MD5                                     | SHA256                                   |
 | --------------------------- | ----------------------------------------|----------------------------------------- |
 | LICENSE                     | e62637ea8a114355b985fd86c9ffbd6e        | 230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809   |
-| PSX2CNFCreator.exe          | 90744d245d6fbbb1a3c006b7c785d2e4        | c87ed73812ff767af19d2f8fc53bdd99c68dd491748014e241780d22ae51dbbf   |
-| README.md                   | decd4c5a9deac5c961e19989a9608b00        | e3af297778f8bb90b6e85b7271dd2d1ddab3d1e5385e0bca39e8a9058079129e   |
+| PSX2CNFCreator.exe          | dd0c35d018b24e87ec0f718252642e95        | ad125417a59c54f0e37b16e5a154cdf992b975ab9246d904f942fdd9844f49e9   |
+| README.md                   | c5748fe629196f14c45436e92a5fa165        | 527551b8f04a088753e5196d9ec530f00c699b3a73de1f92b4708ec2272b551b   |
 
 ### Features
 ------------
