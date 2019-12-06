@@ -12,6 +12,8 @@ using System.Diagnostics;
 // Extras
 using PSX2_CNF_Creator;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace PSTwo_CNF
 {
@@ -48,7 +50,9 @@ namespace PSTwo_CNF
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.Text = "PSX/2 CNF Creator 1.1";
-            //this.Text = String.Format("PSX/2 CNF Creator {0}", AssemblyVersion);
+            this.Text = String.Format("PSX/2 CNF Creator {0}", Application.ProductVersion.Remove(5, 2));
+            //string _myText = "PSX/2 CNF Creator " + Application.ProductVersion;
+            //this.Text = _myText.Remove(23, 2);
 
             cbVMode.SelectedIndex = 1;
             cbHDD.SelectedIndex = 0;
@@ -77,19 +81,12 @@ namespace PSTwo_CNF
                 // Cria um arquivo, no caso, cria o arquivo informado na variável _file.
                 File.Create(_file);
             }
-            /*
-            else
-            {
-                MessageBox.Show("Arquivo SYSTEM.CNF já existe!\r\nO arquivo será sobrescrito!", "AVISO!");
-                // Apaga o arquivo, caso ele já exista.
-                //File.Delete(_file);
-            }*/
         }
 
         /// <summary>
         /// Método que limpa os formulários.
         /// </summary>
-        public void clearForm()
+        private void clearForm()
         {
             txtCreateELF.Text = null;
             txtCreateVersion.Text = null;
@@ -107,23 +104,41 @@ namespace PSTwo_CNF
         /// <param name="tcb"></param>
         /// <param name="eventone"></param>
         /// <param name="stack"></param>
-        public static void writePSOneData(String elf, String tcb, String eventone, String stack)
+        private void writePSOneData(String elf, String tcb, String eventone, String stack)
         {
             FileInfo arquivo = new FileInfo(_file);
             arquivo.Delete();
-            StreamWriter streamW = new StreamWriter(_file, true);
+            //StreamWriter streamW = new StreamWriter(_file, true);
 
-            //Chama nosso método que cria o arquivo caso ele não exista.
-            verifyFile();
+            //Create new SafeFileDialog instance
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Title = "Salvar CNF";
+            saveFileDialog1.AddExtension = true;
+            saveFileDialog1.FileName = "SYSTEM.CNF";
+            saveFileDialog1.DefaultExt = "CNF";
+            saveFileDialog1.Filter = "Arquivo CNF (*.CNF)|*.CNF";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
 
-            //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
-            streamW.WriteLine("BOOT = cdrom:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "TCB = " + tcb + 
-                "\r\n" + "EVENT = " + eventone + "\r\n" + "STACK = " + stack.Replace(" ",""));
-            // Exibe uma mensagem informando que os dados foram gravados.
-            MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!");
+            //Display dialog and see if OK button was pressed
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Save file to file name specified to SafeFileDialog
+                StreamWriter streamW = new StreamWriter(saveFileDialog1.FileName);
 
-            //Sempre que terminarem de ler e gravar em um arquivo é necessário fecha-lo, isto evita mutios erros.
-            streamW.Close();
+                //Chama nosso método que cria o arquivo caso ele não exista.
+                verifyFile();
+
+                //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
+                streamW.WriteLine("BOOT = cdrom:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "TCB = " + tcb +
+                    "\r\n" + "EVENT = " + eventone + "\r\n" + "STACK = " + stack.Replace(" ", ""));
+
+                //Sempre que terminarem de ler e gravar em um arquivo é necessário fecha-lo, isto evita mutios erros.
+                streamW.Close();
+
+                // Exibe uma mensagem informando que os dados foram gravados.
+                messageCheck(3);
+            }
         }
 
         /// <summary>
@@ -132,7 +147,7 @@ namespace PSTwo_CNF
         /// <param name="elf"></param>
         /// <param name="version"></param>
         /// <param name="region"></param>
-        public static void writeData(String elf, String version, String region, String hddunit)
+        private void writeData(String elf, String version, String region, String hddunit)
         {
             FileInfo arquivo = new FileInfo(_file);
             arquivo.Delete();
@@ -164,7 +179,7 @@ namespace PSTwo_CNF
                         "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region);
                     streamW.Close();
                     // Exibe uma mensagem informando que os dados foram gravados.
-                    MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!");
+                    messageCheck(3);
                 }
                 else
                 {
@@ -172,7 +187,7 @@ namespace PSTwo_CNF
                         "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
                     streamW.Close();
                     // Exibe uma mensagem informando que os dados foram gravados.
-                    MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!");
+                    messageCheck(3);
                 }
             }
         }
@@ -200,7 +215,7 @@ namespace PSTwo_CNF
             {
                 if (txtCreateELF.Text == string.Empty || txtCreateVersion.Text == string.Empty)
                 {
-                    MessageBox.Show("Os valores não podem estar vazios!", "AVISO!");
+                    messageCheck(1);
                 }
                 else if (cbHDD.SelectedIndex != 0)
                 {
@@ -215,7 +230,7 @@ namespace PSTwo_CNF
             {
                 if (txtCreateELF.Text == string.Empty || txtStack.Text == string.Empty)
                 {
-                    MessageBox.Show("Os valores não podem estar vazios!", "AVISO!");
+                    messageCheck(1);
                 }
                 else
                 {
@@ -307,15 +322,29 @@ namespace PSTwo_CNF
         {
             if (!File.Exists("psxhelp.chm"))
             {
-                // Cria um arquivo, no caso, cria o arquivo informado na variável _file.
-                //File.Create(_file);
-                MessageBox.Show("O arquivo de ajuda não existe!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageCheck(2);
             }
             else
             {
                 string _curDir = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString());
                 Help.ShowHelp(this, "file://" + _curDir + "\\psxhelp.chm");
             }
+        }
+
+        public int messageCheck(int _numberCheck)
+        {
+            if(_numberCheck == 1)
+            {
+                MessageBox.Show("Os valores não podem estar vazios!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (_numberCheck == 2)
+            {
+                MessageBox.Show("O arquivo de ajuda não existe!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (_numberCheck == 3)
+            {
+                MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return _numberCheck;
         }
     }
 }
