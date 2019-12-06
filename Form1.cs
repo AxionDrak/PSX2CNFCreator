@@ -25,17 +25,26 @@ namespace PSTwo_CNF
         /// Se remover o true toda vez que for gravar uma informação nosso arquivo será limpado e as informações anteriores serão perdidas.
         /// </summary>
         //private static StreamWriter streamW = new StreamWriter(_file, true);
-
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Click event of the TsmiExit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void TsmiExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        
+
+        /// <summary>
+        /// Handles the Load event of the Form1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.Text = "PSX/2 CNF Creator 1.1";
@@ -136,23 +145,12 @@ namespace PSTwo_CNF
             "\r\n\r\nNOTA: O programa também adciona automaticamente a linha 4 ou 5, conforme a necessidade, no SYSTEM.CNF (linha vazia).";
         }
 
-        /*
-        public string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }*/
-
         /// <summary>
         /// Método que cria o arquivo SYSTEM.CNF caso ele não exista, Void por que não retorna nada.
         /// </summary>
         private static void verifyFile()
         {
-            //StreamWriter streamW = new StreamWriter(_file, true);
             // Verifica se o arquivo existe, retorna true, neguei a condição, então se o arquivo não existir ele entra no IF.
-            //if (!File.Exists(_file))
             if (!File.Exists(_file))
             {
                 // Cria um arquivo, no caso, cria o arquivo informado na variável _file.
@@ -198,11 +196,11 @@ namespace PSTwo_CNF
             verifyFile();
 
             //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
-            streamW.WriteLine("BOOT = cdrom:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "TCB = " + tcb + "\r\n" + "EVENT = " + eventone + "\r\n" + "STACK = " + stack.Replace(" ",""));
+            streamW.WriteLine("BOOT = cdrom:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "TCB = " + tcb + 
+                "\r\n" + "EVENT = " + eventone + "\r\n" + "STACK = " + stack.Replace(" ",""));
             // Exibe uma mensagem informando que os dados foram gravados.
             MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!");
 
-            //streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf + ";1" + "\r\n" + "VER = " + version + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
             //Sempre que terminarem de ler e gravar em um arquivo é necessário fecha-lo, isto evita mutios erros.
             streamW.Close();
         }
@@ -233,31 +231,28 @@ namespace PSTwo_CNF
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //Save file to file name specified to SafeFileDialog
-                //StreamWriter writer = new StreamWriter(sfd.FileName);
                 StreamWriter streamW = new StreamWriter(saveFileDialog1.FileName);
 
                 //Chama nosso método que cria o arquivo caso ele não exista.
                 verifyFile();
 
-                /*Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
-                 * 
-                 */
+                //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
                 if (hddunit == " ")
                 {
-                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region);
+                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + 
+                        "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region);
                     streamW.Close();
                     // Exibe uma mensagem informando que os dados foram gravados.
                     MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!");
                 }
                 else
                 {
-                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
+                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + 
+                        "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
                     streamW.Close();
                     // Exibe uma mensagem informando que os dados foram gravados.
                     MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!");
                 }
-                
-                //streamW.Close();
             }
         }
 
@@ -309,7 +304,7 @@ namespace PSTwo_CNF
         }
 
         /// <summary>
-        /// RadioButton PSTwo
+        /// PSTwo Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -318,23 +313,23 @@ namespace PSTwo_CNF
             if (rbPSTwo.Checked == true)
             {
                 clearForm();
-
+                // Labels
                 labelVersion.Text = "Versão:";
                 labelVMode.Text = "VMode:";
                 labelHDD.Text = "HDDUNITPOWER:";
-
+                // ComboBox and CheckBox
                 cbTCB.Visible = false;
                 cbEvent.Visible = false;
-                txtStack.Visible = false;
-
-                txtCreateVersion.Visible = true;
                 cbVMode.Visible = true;
                 cbHDD.Visible = true;
+                // TextBox
+                txtCreateVersion.Visible = true;
+                txtStack.Visible = false;                
             }
         }
 
         /// <summary>
-        /// RadioButton PSOne
+        /// PSOne Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -343,17 +338,18 @@ namespace PSTwo_CNF
             if(rbPSOne.Checked == true)
             {
                 clearForm();
+                // Labels
                 labelVersion.Text = "TCB:";
                 labelVMode.Text = "EVENT:";
                 labelHDD.Text = "STACK:";
-
+                // ComboBox and CheckBox
                 cbTCB.Visible = true;
                 cbEvent.Visible = true;
-                txtStack.Visible = true;
-
-                txtCreateVersion.Visible = false;
                 cbVMode.Visible = false;
                 cbHDD.Visible = false;
+                // TextBox
+                txtCreateVersion.Visible = false;
+                txtStack.Visible = true;
             }
         }
 
@@ -388,8 +384,17 @@ namespace PSTwo_CNF
 
         private void TsmiHelp_Click(object sender, EventArgs e)
         {
-            string _curDir = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString());
-            Help.ShowHelp(this, "file://" + _curDir + "\\psxhelp.chm");
+            if (!File.Exists("psxhelp.chm"))
+            {
+                // Cria um arquivo, no caso, cria o arquivo informado na variável _file.
+                //File.Create(_file);
+                MessageBox.Show("O arquivo de ajuda não existe!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string _curDir = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString());
+                Help.ShowHelp(this, "file://" + _curDir + "\\psxhelp.chm");
+            }
         }
     }
 }
