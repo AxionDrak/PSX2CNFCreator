@@ -111,7 +111,7 @@ Include the following information:
 
 December 08, 2019
 * Added support for OPL Mini (OPL Mini Mode).
-  - Available by selecting the PSTwo option.
+  - Available in PSTwo mode by selecting the OPL Mini Mode option.  
 * Validation system now uses REGEX.
 * Improved source code.
 
