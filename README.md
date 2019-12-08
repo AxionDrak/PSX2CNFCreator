@@ -61,7 +61,7 @@ Version: 1.3.1
 --------------
 The structure of the SYSTEM.CNF file is different for PSOne and PSTwo consoles.
 
-Below are two examples of this file:
+Below are examples of this file:
 
 - SYSTEM.CNF *(PSOne)*
 ```
@@ -104,6 +104,14 @@ Include the following information:
 
 ### Changelog
 -------------
+`v1.4.0`
+
+December 08, 2019
+* Added support for OPL Mini (OPL Mini Mode).
+  - Available by selecting the PSTwo option.
+* Validation system now uses REGEX.
+* Improved source code.
+
 `v1.3.1`
 
 December 06, 2019
