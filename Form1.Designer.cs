@@ -43,6 +43,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbMiniHDD = new System.Windows.Forms.ComboBox();
+            this.cbMiniOPL = new System.Windows.Forms.ComboBox();
+            this.chkMiniOPL = new System.Windows.Forms.CheckBox();
             this.cbEvent = new System.Windows.Forms.ComboBox();
             this.cbTCB = new System.Windows.Forms.ComboBox();
             this.txtStack = new System.Windows.Forms.TextBox();
@@ -173,6 +176,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbMiniHDD);
+            this.groupBox2.Controls.Add(this.cbMiniOPL);
+            this.groupBox2.Controls.Add(this.chkMiniOPL);
             this.groupBox2.Controls.Add(this.cbEvent);
             this.groupBox2.Controls.Add(this.cbTCB);
             this.groupBox2.Controls.Add(this.txtStack);
@@ -192,6 +198,44 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Criar CNF";
+            // 
+            // cbMiniHDD
+            // 
+            this.cbMiniHDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMiniHDD.FormattingEnabled = true;
+            this.cbMiniHDD.Items.AddRange(new object[] {
+            "HDD",
+            "NIC",
+            "NICHDD"});
+            this.cbMiniHDD.Location = new System.Drawing.Point(113, 127);
+            this.cbMiniHDD.Name = "cbMiniHDD";
+            this.cbMiniHDD.Size = new System.Drawing.Size(157, 21);
+            this.cbMiniHDD.TabIndex = 18;
+            // 
+            // cbMiniOPL
+            // 
+            this.cbMiniOPL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMiniOPL.FormattingEnabled = true;
+            this.cbMiniOPL.Items.AddRange(new object[] {
+            "BOOT2 = PATINFO",
+            "BOOT2 = pfs:/EXECUTE.KELF",
+            "BOOT2 = NOBOOT",
+            "IOPRP = PATINFO"});
+            this.cbMiniOPL.Location = new System.Drawing.Point(55, 26);
+            this.cbMiniOPL.Name = "cbMiniOPL";
+            this.cbMiniOPL.Size = new System.Drawing.Size(215, 21);
+            this.cbMiniOPL.TabIndex = 17;
+            // 
+            // chkMiniOPL
+            // 
+            this.chkMiniOPL.AutoSize = true;
+            this.chkMiniOPL.Location = new System.Drawing.Point(171, 0);
+            this.chkMiniOPL.Name = "chkMiniOPL";
+            this.chkMiniOPL.Size = new System.Drawing.Size(99, 17);
+            this.chkMiniOPL.TabIndex = 16;
+            this.chkMiniOPL.Text = "Modo OPL Mini";
+            this.chkMiniOPL.UseVisualStyleBackColor = true;
+            this.chkMiniOPL.CheckedChanged += new System.EventHandler(this.ChkMiniOPL_CheckedChanged);
             // 
             // cbEvent
             // 
@@ -365,7 +409,7 @@
             // 
             this.rbPSTwo.AutoSize = true;
             this.rbPSTwo.Checked = true;
-            this.rbPSTwo.Location = new System.Drawing.Point(150, 19);
+            this.rbPSTwo.Location = new System.Drawing.Point(155, 19);
             this.rbPSTwo.Name = "rbPSTwo";
             this.rbPSTwo.Size = new System.Drawing.Size(60, 17);
             this.rbPSTwo.TabIndex = 1;
@@ -377,7 +421,7 @@
             // rbPSOne
             // 
             this.rbPSOne.AutoSize = true;
-            this.rbPSOne.Location = new System.Drawing.Point(67, 19);
+            this.rbPSOne.Location = new System.Drawing.Point(72, 19);
             this.rbPSOne.Name = "rbPSOne";
             this.rbPSOne.Size = new System.Drawing.Size(59, 17);
             this.rbPSOne.TabIndex = 0;
@@ -406,6 +450,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(316, 333);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(316, 333);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -457,6 +502,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDummyFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.CheckBox chkMiniOPL;
+        private System.Windows.Forms.ComboBox cbMiniOPL;
+        private System.Windows.Forms.ComboBox cbMiniHDD;
     }
 }
 
