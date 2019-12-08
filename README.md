@@ -47,7 +47,7 @@ Version: 1.3.1
 * Supports file and program versioning *(PSTwo)*
 * Supports PAL and NTSC video modes *(PSTwo)*
 * Supports HDDUNITPOWER in NONE, HDD, NIC and NICHDD modes *(PSTwo)*
-  - OPL mini support only DD, NIC and NICHDD modes
+  - OPL mini support only HDD, NIC and NICHDD modes
 * Supports TCB *(PSOne)*
 * Supports EVENT *(PSOne)*
 * Supports STACK *(PSOne)*
