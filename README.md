@@ -28,15 +28,15 @@ So please don't mind the badly designed spaghetti code. :P
 -----------------
 Use the table below to ensure that downloaded files have not changed. These values are for the latest stable version in its compiled (final) version.
 
-Version: 1.3.1
+Version: 1.4.0
 
 | Filename                 | MD5                              | SHA256                                                         
 |:-------------------------|:---------------------------------|:---------------------------------------------------------------|
 | LICENSE                  | e62637ea8a114355b985fd86c9ffbd6e | 230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809
-| PSX2CNFCreator.exe       | dd0c35d018b24e87ec0f718252642e95 | ad125417a59c54f0e37b16e5a154cdf992b975ab9246d904f942fdd9844f49e9 
-| README.md                | 845a543111e6fbef46a58bf4b077e5ad | d8edd37c2b09a8fb0d35e895aa5b334fbdb792dedea47c6ec7f1d3f72932127d 
-| psxhelp.chm              | a2bff35e32c93ddcf35d5bd8b910b297 | 32395274a35ba473940cee39864ee1d202e724f1a5df313796f19e8899642d5d 
-| PSX2CNFCreator_1.3.1.zip | 5231ef77bffce2a693de508f5cab4b54 | 3b1a4243d3bc1c73bef78d4d9e76ab0903269b8be1bf4493dbe647ff80f12b8c 
+| PSX2CNFCreator.exe       | c08a278b477dd8d52da3c77759de0e40 | 912c5c37ccacbd220321944ad629f31cc257a27f106dac0c85d272ab4b0eef14 
+| README.md                | f68faaed59732675bd932ccf3d3dfa72 | 7ba72e34bf463ed30f47bbc88d7d3a7130fec61d4d6d3aaf78978219b9774700 
+| psxhelp.chm              | 1cc1f0ccbb29168d288863019a10f7f5 | 32980b3a6fc0f1baf16c37e2da9aebfe3e0880d3e19e5e93c09403263866fe1e 
+| PSX2CNFCreator_1.3.1.zip | 83a43b325ca267f68a691423de762f35 | aeae499657beead34f4f16bdb43b48df4a9b195496dae35ea3968ecfd4cf1181 
 
 ### Features
 ------------
