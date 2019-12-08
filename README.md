@@ -41,10 +41,13 @@ Version: 1.3.1
 ### Features
 ------------
 * Supports create SYSTEM.CNF files *(PSOne and PSTwo)*
+* Supports create SYSTEM.CNF files for OPL Mini *(PSTwo)*
 * Supports any ELF file *(PSOne and PSTwo)*
+* Supports any KELF file *(OPL Mini for PSTwo)*
 * Supports file and program versioning *(PSTwo)*
 * Supports PAL and NTSC video modes *(PSTwo)*
 * Supports HDDUNITPOWER in NONE, HDD, NIC and NICHDD modes *(PSTwo)*
+  - OPL mini support only DD, NIC and NICHDD modes
 * Supports TCB *(PSOne)*
 * Supports EVENT *(PSOne)*
 * Supports STACK *(PSOne)*
