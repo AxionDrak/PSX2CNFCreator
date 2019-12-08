@@ -167,9 +167,9 @@ See _COMPILE_ file for how to compile and install PSX/2 CNF Creator.
 
 ### Documentation
 -----------------
-See README for PSX/2 CNF Creator information.
+See _README_ for PSX/2 CNF Creator information.
 
 ### License
 -----------
 This project is released under the GNU license. If you redistribute the binary
-or source code of PSX/2 CNF Creator, please attach file LICENSE with your products.
+or source code of PSX/2 CNF Creator, please attach file _LICENSE_ with your products.
