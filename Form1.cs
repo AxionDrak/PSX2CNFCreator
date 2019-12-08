@@ -14,6 +14,7 @@ using PSX2_CNF_Creator;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace PSTwo_CNF
 {
@@ -21,12 +22,13 @@ namespace PSTwo_CNF
     {
         private static string _file = "SYSTEM.CNF";
 
+        FileInfo arquivo = new FileInfo(_file);
+
         /// <summary>
         /// Criamos um novo objeto do tipo StreamWriter, passamos o nome do nosso arquivo.
         /// o true informa que deve continuar gravando no arquivo, isto quer dizer que ele não vai limpar e escrever tudo de novo.
         /// Se remover o true toda vez que for gravar uma informação nosso arquivo será limpado e as informações anteriores serão perdidas.
         /// </summary>
-        //private static StreamWriter streamW = new StreamWriter(_file, true);
         public Form1()
         {
             InitializeComponent();
@@ -49,15 +51,13 @@ namespace PSTwo_CNF
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            //this.Text = "PSX/2 CNF Creator 1.1";
-            this.Text = String.Format("PSX/2 CNF Creator {0}", Application.ProductVersion.Remove(5, 2));
-            //string _myText = "PSX/2 CNF Creator " + Application.ProductVersion;
-            //this.Text = _myText.Remove(23, 2);
+            this.Text = string.Format("PSX/2 CNF Creator {0}", Application.ProductVersion.Remove(5, 2));
 
             cbVMode.SelectedIndex = 1;
             cbHDD.SelectedIndex = 0;
             cbTCB.SelectedIndex = 3;
             cbEvent.SelectedIndex = 9;
+            cbMiniOPL.SelectedIndex = 0;
 
             // Modo PSTwo
             labelVersion.Text = "Versão:";
@@ -68,6 +68,8 @@ namespace PSTwo_CNF
             cbTCB.Visible = false;
             cbVMode.Visible = true;
             cbHDD.Visible = true;
+            cbMiniOPL.Visible = false;
+            cbMiniHDD.Visible = false;
         }
 
         /// <summary>
@@ -95,6 +97,8 @@ namespace PSTwo_CNF
             cbEvent.SelectedIndex = 9;
             cbVMode.SelectedIndex = 1;
             cbHDD.SelectedIndex = 0;
+            cbMiniOPL.SelectedIndex = 0;
+            cbMiniHDD.SelectedIndex = 2;
         }
 
         /// <summary>
@@ -106,19 +110,23 @@ namespace PSTwo_CNF
         /// <param name="stack"></param>
         private void writePSOneData(String elf, String tcb, String eventone, String stack)
         {
-            FileInfo arquivo = new FileInfo(_file);
             arquivo.Delete();
-            //StreamWriter streamW = new StreamWriter(_file, true);
+
+            // Regex
+            string retstack = Regex.Replace(stack, @"[^A-Za-z0-9]+", string.Empty); // STACK
+            string retelf = Regex.Replace(elf, @"[^A-Za-z0-9._]+", string.Empty); // ELF
 
             //Create new SafeFileDialog instance
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Salvar CNF";
-            saveFileDialog1.AddExtension = true;
-            saveFileDialog1.FileName = "SYSTEM.CNF";
-            saveFileDialog1.DefaultExt = "CNF";
-            saveFileDialog1.Filter = "Arquivo CNF (*.CNF)|*.CNF";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Title = "Salvar CNF",
+                AddExtension = true,
+                FileName = "SYSTEM.CNF",
+                DefaultExt = "CNF",
+                Filter = "Arquivo CNF (*.CNF)|*.CNF",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
 
             //Display dialog and see if OK button was pressed
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -130,14 +138,14 @@ namespace PSTwo_CNF
                 verifyFile();
 
                 //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
-                streamW.WriteLine("BOOT = cdrom:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + "TCB = " + tcb +
-                    "\r\n" + "EVENT = " + eventone + "\r\n" + "STACK = " + stack.Replace(" ", ""));
+                streamW.WriteLine("BOOT = cdrom:" + "\\" + retelf.Replace(" ", "") + ";1" + "\r\n" + "TCB = " + tcb +
+                    "\r\n" + "EVENT = " + eventone + "\r\n" + "STACK = " + retstack.Replace(" ", ""));
 
                 //Sempre que terminarem de ler e gravar em um arquivo é necessário fecha-lo, isto evita mutios erros.
                 streamW.Close();
 
                 // Exibe uma mensagem informando que os dados foram gravados.
-                messageCheck(3);
+                MessageCheck(3);
             }
         }
 
@@ -149,18 +157,23 @@ namespace PSTwo_CNF
         /// <param name="region"></param>
         private void writeData(String elf, String version, String region, String hddunit)
         {
-            FileInfo arquivo = new FileInfo(_file);
             arquivo.Delete();
-            
+
+            // Regex
+            string retversion = Regex.Replace(version, @"[^A-Za-z0-9.]+", string.Empty); // VERSION
+            string retelf = Regex.Replace(elf, @"[^A-Za-z0-9._]+", string.Empty); // ELF
+
             //Create new SafeFileDialog instance
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Salvar CNF";
-            saveFileDialog1.AddExtension = true;
-            saveFileDialog1.FileName = "SYSTEM.CNF";
-            saveFileDialog1.DefaultExt = "CNF";
-            saveFileDialog1.Filter = "Arquivo CNF (*.CNF)|*.CNF";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Title = "Salvar CNF",
+                AddExtension = true,
+                FileName = "SYSTEM.CNF",
+                DefaultExt = "CNF",
+                Filter = "Arquivo CNF (*.CNF)|*.CNF",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
 
             //Display dialog and see if OK button was pressed
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -174,19 +187,61 @@ namespace PSTwo_CNF
                 //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
                 if (hddunit == " ")
                 {
-                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + 
-                        "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region);
+                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + retelf.Replace(" ", "") + ";1" + "\r\n" + 
+                        "VER = " + retversion.Replace(" ", "") + "\r\n" + "VMODE = " + region);
                     streamW.Close();
                     // Exibe uma mensagem informando que os dados foram gravados.
-                    messageCheck(3);
+                    MessageCheck(3);
+
+                    // SDADS!@#11#$%¨&&*()907651#/*-+.__
                 }
                 else
                 {
-                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + elf.Replace(" ", "") + ";1" + "\r\n" + 
-                        "VER = " + version.Replace(" ", "") + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
+                    streamW.WriteLine("BOOT2 = cdrom0:" + "\\" + retelf.Replace(" ", "") + ";1" + "\r\n" + 
+                        "VER = " + retversion.Replace(" ", "") + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
                     streamW.Close();
                     // Exibe uma mensagem informando que os dados foram gravados.
-                    messageCheck(3);
+                    MessageCheck(3);
+                }
+            }
+        }
+
+        private void writeDataMiniOPL(String kelf, String version, String region, String hddunit)
+        {
+            arquivo.Delete();
+
+            // Regex
+            string retversion = Regex.Replace(version, @"[^A-Za-z0-9.]+", string.Empty); // VERSION
+
+            //Create new SafeFileDialog instance
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Title = "Salvar CNF",
+                AddExtension = true,
+                FileName = "SYSTEM.CNF",
+                DefaultExt = "CNF",
+                Filter = "Arquivo CNF (*.CNF)|*.CNF",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+
+            //Display dialog and see if OK button was pressed
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Save file to file name specified to SafeFileDialog
+                StreamWriter streamW = new StreamWriter(saveFileDialog1.FileName);
+
+                //Chama nosso método que cria o arquivo caso ele não exista.
+                verifyFile();
+
+                //Através do objeto streamW acessamos o método WriteLine e passamos os textos que queremos gravar.
+                if (version != " ")
+                {
+                    streamW.WriteLine(kelf + "\r\n" + "VER = " + retversion.Replace(" ", "") + "\r\n" + "VMODE = " + region + "\r\n" + "HDDUNITPOWER = " + hddunit);
+
+                    streamW.Close();
+                    // Exibe uma mensagem informando que os dados foram gravados.
+                    MessageCheck(3);
                 }
             }
         }
@@ -210,11 +265,45 @@ namespace PSTwo_CNF
         /// <param name="e"></param>
         private void BtnSaveCNF_Click(object sender, EventArgs e)
         {
-            if (rbPSTwo.Checked)
+            string _patinfo;
+
+            if(rbPSTwo.Checked && chkMiniOPL.Checked)
             {
-                if (txtCreateELF.Text == string.Empty || txtCreateVersion.Text == string.Empty)
+                if (string.IsNullOrEmpty(txtCreateVersion.Text))
                 {
-                    messageCheck(1);
+                    MessageCheck(1);
+                }
+                else
+                {
+                    if (cbMiniOPL.SelectedIndex == 0)
+                    {
+                        _patinfo = "BOOT2 = PATINFO";
+                        writeDataMiniOPL(_patinfo, txtCreateVersion.Text, cbVMode.Text, cbMiniHDD.Text);
+                    }
+                    else if(cbMiniOPL.SelectedIndex == 1)
+                    {
+                        _patinfo = "BOOT2 = pfs:/EXECUTE.KELF";
+                        writeDataMiniOPL(_patinfo, txtCreateVersion.Text, cbVMode.Text, cbMiniHDD.Text);
+                    }
+                    else if(cbMiniOPL.SelectedIndex == 2)
+                    {
+                        _patinfo = "BOOT2 = NOBOOT";
+                        writeDataMiniOPL(_patinfo, txtCreateVersion.Text, cbVMode.Text, cbMiniHDD.Text);
+                    }
+                    else
+                    {
+                        _patinfo = "IOPRP = PATINFO";
+                        writeDataMiniOPL(_patinfo, txtCreateVersion.Text, cbVMode.Text, cbMiniHDD.Text);
+                    }
+
+                    //writeDataMiniOPL(cbMiniOPL.Text, txtCreateVersion.Text, cbVMode.Text, cbMiniHDD.Text);
+                }
+            }
+            else if (rbPSTwo.Checked)
+            {
+                if (string.IsNullOrEmpty(txtCreateELF.Text) || string.IsNullOrEmpty(txtCreateVersion.Text))
+                {
+                    MessageCheck(1);
                 }
                 else if (cbHDD.SelectedIndex != 0)
                 {
@@ -225,11 +314,11 @@ namespace PSTwo_CNF
                     writeData(txtCreateELF.Text, txtCreateVersion.Text, cbVMode.Text, " ");
                 }
             }
-            else if (rbPSOne.Checked)
+            else
             {
-                if (txtCreateELF.Text == string.Empty || txtStack.Text == string.Empty)
+                if (string.IsNullOrEmpty(txtCreateELF.Text) || string.IsNullOrEmpty(txtStack.Text))
                 {
-                    messageCheck(1);
+                    MessageCheck(1);
                 }
                 else
                 {
@@ -245,7 +334,7 @@ namespace PSTwo_CNF
         /// <param name="e"></param>
         private void RbPSTwo_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbPSTwo.Checked == true)
+            if (rbPSTwo.Checked)
             {
                 clearForm();
                 // Labels
@@ -257,6 +346,9 @@ namespace PSTwo_CNF
                 cbEvent.Visible = false;
                 cbVMode.Visible = true;
                 cbHDD.Visible = true;
+                cbHDD.Enabled = true;
+                //chkMiniOPL.Checked = false;
+                chkMiniOPL.Enabled = true;
                 // TextBox
                 txtCreateVersion.Visible = true;
                 txtStack.Visible = false;                
@@ -270,7 +362,7 @@ namespace PSTwo_CNF
         /// <param name="e"></param>
         private void RbPSOne_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbPSOne.Checked == true)
+            if(rbPSOne.Checked)
             {
                 clearForm();
                 // Labels
@@ -282,9 +374,45 @@ namespace PSTwo_CNF
                 cbEvent.Visible = true;
                 cbVMode.Visible = false;
                 cbHDD.Visible = false;
+                cbHDD.Enabled = false;
+                chkMiniOPL.Checked = false;
+                chkMiniOPL.Enabled = false;
                 // TextBox
                 txtCreateVersion.Visible = false;
                 txtStack.Visible = true;
+            }
+        }
+
+        /// <summary>
+        /// Handles the CheckedChanged event of the chkMiniOPL control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void ChkMiniOPL_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMiniOPL.Checked)
+            {
+                clearForm();
+                // Labels
+                labelELF.Text = "KELF:";
+                // ComboBox and CheckBox
+                cbMiniOPL.Visible = true;
+                cbMiniHDD.Visible = true;
+                cbHDD.Visible = false;
+                // TextBox
+                txtCreateELF.Visible = false;
+            }
+            else
+            {
+                clearForm();
+                // Labels
+                labelELF.Text = "ELF:";
+                // ComboBox and CheckBox
+                cbMiniOPL.Visible = false;
+                cbMiniHDD.Visible = false;
+                cbHDD.Visible = true;
+                // TextBox
+                txtCreateELF.Visible = true;
             }
         }
 
@@ -295,8 +423,10 @@ namespace PSTwo_CNF
         /// <param name="e"></param>
         private void TsmiPayPal_Click(object sender, EventArgs e)
         {
-            Process _Paypal = new Process();
-            _Paypal.StartInfo = new ProcessStartInfo(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JQCLDMB277N3N&source=url");
+            Process _Paypal = new Process
+            {
+                StartInfo = new ProcessStartInfo(@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JQCLDMB277N3N&source=url")
+            };
             _Paypal.Start();
         }
 
@@ -321,16 +451,16 @@ namespace PSTwo_CNF
         {
             if (!File.Exists("psxhelp.chm"))
             {
-                messageCheck(2);
+                MessageCheck(2);
             }
             else
             {
-                string _curDir = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString());
+                string _curDir = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.ToString());
                 Help.ShowHelp(this, "file://" + _curDir + "\\psxhelp.chm");
             }
         }
 
-        public int messageCheck(int _numberCheck)
+        public static int MessageCheck(int _numberCheck)
         {
             if(_numberCheck == 1)
             {
@@ -342,7 +472,6 @@ namespace PSTwo_CNF
             {
                 MessageBox.Show("Arquivo SYSTEM.CNF gravado com sucesso!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
             return _numberCheck;
         }
     }
