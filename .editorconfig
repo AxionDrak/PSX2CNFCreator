@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0219: A variável é atribuída, mas seu valor nunca é usado
+dotnet_diagnostic.CS0219.severity = silent
