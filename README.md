@@ -36,7 +36,7 @@ Version: 1.4.0
 | PSX2CNFCreator.exe       | c08a278b477dd8d52da3c77759de0e40 | 912c5c37ccacbd220321944ad629f31cc257a27f106dac0c85d272ab4b0eef14 
 | README.md                | f68faaed59732675bd932ccf3d3dfa72 | 7ba72e34bf463ed30f47bbc88d7d3a7130fec61d4d6d3aaf78978219b9774700 
 | psxhelp.chm              | 1cc1f0ccbb29168d288863019a10f7f5 | 32980b3a6fc0f1baf16c37e2da9aebfe3e0880d3e19e5e93c09403263866fe1e 
-| PSX2CNFCreator_1.3.1.zip | 83a43b325ca267f68a691423de762f35 | aeae499657beead34f4f16bdb43b48df4a9b195496dae35ea3968ecfd4cf1181 
+| PSX2CNFCreator_1.4.0.zip | 83a43b325ca267f68a691423de762f35 | aeae499657beead34f4f16bdb43b48df4a9b195496dae35ea3968ecfd4cf1181 
 
 ### Features
 ------------
