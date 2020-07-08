@@ -21,6 +21,7 @@ namespace PSTwo_CNF
     public partial class Form1 : Form
     {
         private static string _file = "SYSTEM.CNF";
+        private string myApp = string.Format("PSX/2 CNF Creator {0}", Application.ProductVersion.Remove(5, 2));
 
         FileInfo arquivo = new FileInfo(_file);
 
@@ -51,7 +52,7 @@ namespace PSTwo_CNF
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = string.Format("PSX/2 CNF Creator {0}", Application.ProductVersion.Remove(5, 2));
+            this.Text = myApp;
 
             cbVMode.SelectedIndex = 1;
             cbHDD.SelectedIndex = 0;
@@ -101,6 +102,22 @@ namespace PSTwo_CNF
             cbMiniHDD.SelectedIndex = 2;
         }
 
+        private void SaveDialog()
+        {
+            
+            //Create new SafeFileDialog instance
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Title = "Salvar CNF",
+                AddExtension = true,
+                FileName = "SYSTEM.CNF",
+                DefaultExt = "CNF",
+                Filter = "Arquivo CNF (*.CNF)|*.CNF",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+            
+        }
         /// <summary>
         /// Apaga o arquivo caso ele exista e cria um novo arquivo com os dados para PSOne.
         /// </summary>
